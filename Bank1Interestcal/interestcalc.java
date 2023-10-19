@@ -40,12 +40,7 @@ public class interestcalc{
                 debit1.add(Integer.parseInt(list1[2]));
             }
    
-        }
-        System.out.println(credit1.get(1));
-        System.out.println(debit1.get(1));
-        System.out.println(date2);
-        System.out.println(date1);
-            
+        }     
 
         String dt1="";
         double time1=1.0/365;
@@ -55,91 +50,31 @@ public class interestcalc{
         double interest1=0.0;
         int opening1=0;
         int principal1=0;
-        //Use a variable called position to keep the track of transactions
-        //Increment in psotion should happen only when the dates in list date1 & date2 are same
-
-        //We have hard coded the transactions for the first 5 days.
-        //Changes should happen only when the dates match
-        dt1=date2.get(0);
-        if(dt1.equals(date1.get(0))){
-            credit=credit1.get(0);
-            debit=debit1.get(0);
-        }
-        else{
-            credit=0;
-            debit=0;
-        }
-        opening1=principal1;
-        principal1=opening1+credit-debit;
-        interest1=principal1*time1*rate1;
-        System.out.println(interest1);
-
-        dt1=date2.get(1);
-        if(dt1.equals(date1.get(1))){
-            credit=credit1.get(1);
-            debit=debit1.get(1);
-        }
-        else{
-            credit=0;
-            debit=0;
-        }
-        opening1=principal1;
-        principal1=opening1+credit-debit;
-        interest1=principal1*time1*rate1;
-        System.out.println(interest1);
-
-         dt1=date2.get(2);
-        if(dt1.equals(date1.get(2))){
-            credit=credit1.get(2);
-            debit=debit1.get(2);
-        }
-        else{
-            credit=0;
-            debit=0;
-        }
-        opening1=principal1;
-        principal1=opening1+credit-debit;
-        interest1=principal1*time1*rate1;
-        System.out.println(interest1);
+        int pos=0;
+        double tint=0.0;
+        List<Double> intl=new ArrayList<>();
         
-
-        dt1=date2.get(3);
-        if(dt1.equals(date1.get(3))){
-            credit=credit1.get(3);
-            debit=debit1.get(3);
-        }
-        else{
-            credit=0;
-            debit=0;
-        }
-        opening1=principal1;
-        principal1=opening1+credit-debit;
-        interest1=principal1*time1*rate1;
-        System.out.println(interest1);
-
-        dt1=date2.get(4);
-        System.out.println(dt1);
-        System.out.println(date2.get(4));
-        if(dt1.equals(date1.get(1))){
-            credit=credit1.get(1);
-            debit=debit1.get(1);
-            System.out.println(credit);
-            System.out.println(debit);
-        }
-        else{
-            credit=0;
-            debit=0;
-        }
-        opening1=principal1;
-        principal1=opening1+credit-debit;
-        interest1=principal1*time1*rate1;
-        System.out.println(interest1);
-        
-        
-        
-        
-
        
+        for(int i=0;i<date2.size();i++){
+            dt1=date2.get(i);
+            if(dt1.equals(date1.get(pos))){
+                credit=credit1.get(pos);
+                debit=debit1.get(pos);
+                pos=pos+1;
+            }
+            else{
+                credit=0;
+                debit=0;
+            }
+            opening1=principal1;
+            principal1=opening1+credit-debit;
+            interest1=principal1*time1*rate1;
+            intl.add(interest1);
+            tint=tint+interest1;
+
+        }
+        System.out.printf("The total interest paid by Bank1: Rs %.2f%n",tint);//printf is to format the total interest to have only 2 numbers after decimal
+
        
         
 

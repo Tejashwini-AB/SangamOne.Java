@@ -7,7 +7,6 @@ import java.io.IOException;
 
 public class T3{
 	public static void convert20(int n1)throws IOException{
-		System.setProperty("file.encoding", "UTF-8");
 		File f1=new File("kwords.txt");
 		ArrayList<String> list1=new ArrayList<>();
 		Scanner sc1=new Scanner(f1);
@@ -21,7 +20,6 @@ public class T3{
 }
 	
 	public static void convert2d(int n2)throws IOException{
-		System.setProperty("file.encoding", "UTF-8");
 		File f2=new File("fkwords.txt");
 		ArrayList<String> list2=new ArrayList<>();
 		Scanner sc2=new Scanner(f2);
@@ -36,7 +34,6 @@ public class T3{
 }
 	
 	public static void convert0(int n3)throws IOException{
-		System.setProperty("file.encoding", "UTF-8");
 		File f3=new File("zerowords.txt");
 		ArrayList<String> list3=new ArrayList<>();
 		Scanner sc3=new Scanner(f3);

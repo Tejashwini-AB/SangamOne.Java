@@ -7,7 +7,6 @@ import java.io.IOException;
 
 public class T4{
 	public static void convert9(int n1)throws IOException{
-		System.setProperty("file.encoding", "UTF-8");
 		File f1=new File("knum.txt");
 		ArrayList<String> list1=new ArrayList<>();
 		Scanner sc1=new Scanner(f1);

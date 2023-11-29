@@ -49,7 +49,7 @@ public class T3{
 		
 }
 	public static void main(String[] args)throws IOException{
-		System.out.println("This program will work upto 20");
+		System.out.println("This program will work upto 99");
 		System.out.println("Enter any number: ");
 		Scanner sc4=new Scanner(System.in);
 		int num1=sc4.nextInt();
